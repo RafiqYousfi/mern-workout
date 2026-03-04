@@ -16,6 +16,7 @@ app.get('/', (req, res) => {
   res.json({ message: 'Backend draait!' });
 });
 
+
 // Start server
 app.listen(PORT, () => {
   console.log(`Server draait op http://localhost:${PORT}`);
