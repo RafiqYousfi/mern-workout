@@ -2,12 +2,17 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import workoutRoutes from './src/routes/workoutRoutes.js';
+import cors from 'cors';
 
 const app = express();
 const PORT = process.env.PORT || 4000;
 
 // Middleware
 app.use(express.json());
+
+app.use(cors({
+  origin: 'http://localhost:5173'
+}));
 
 // Routes
 app.use('/api/workouts', workoutRoutes);
